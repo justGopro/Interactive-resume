@@ -1,59 +1,175 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" media="all">
-    <link rel="stylesheet" href="styles.scss" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <title>Jorden's Interactive resume</title><
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.scss">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("styles");
+    css.type = "styles.css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };
+  
+
+  </script>
 </head>
+
 <body>
-<!-- left side content-->
-<div class="split left">
-    <div class="centered">
-        <img src="main img.jpg" alt="Avatar woman">
-        <h2>Jorden Landry</h2>
-        <p><font color="white">AFO/IEFS Wire Technician</font></p>
-        <p><font color="white">Atlas Ambassador</font></p>
-        <p><font color="white">Front-End Developer</font></p>
-        <hr>
-        <p><font color="#47d5fb">Gaining knowledge is never ending. It's just a matter of what the brain can retain"</font></p>
-        
-        <hr>
-    </div>
 
-    <div a href="#" class="hvr-float-shadow" class="contact-info">
+  <center>
+    <h3><span><i><bold>Interactive Resume</bold></i></span></h3>
+  </center>
 
-    <p><i class="fa fa-volume-control-phone" style="font-size:36px"></i> <i><font color="#47d5fb">(985)381-7167</font></i></p>
+<div class="card">
+  <img src="resume picture.jpg" alt="Jorden" style="width:100%">
+  <h2>Jorden Landry</h2>
+  <p class="title">AFO/IEFS Wire Technician</p>
+  <p>Atlas Ambassador</p>
+  <p>Be a
+<span class="txt-rotate" data-period="2000" data-rotate='[ "Leader.", "example for others.", "Enthusiatic Person." ]'></span></p>
+  <div style="margin: 24px 0;">
 
-        <p><i style="font-size:36px" class="fa">&#xf2ba;</i> <i><font color="#47d5fb">104 Hayden Reece St, Houma LA</font></i></p>
-        
-        <p><i class="fa fa-share-square-o" style="font-size:36px"></i> <i><font color="#47d5fb">Landry1023@hotmail.com</font></i></p>
+  </div>
 
-        </div>
-    </div>
+  <p><button>Contact</button></p>
 </div>
 
-<!--right side content-->
-<div class="split right">
-    <div class="centered">
-        <p><center><bold><font color="white">future content goes here</font></bold></center></p>
-        
+
+<section id="cd-timeline" class="cd-container">
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
     </div>
-</div>
 
-<!-- center of page for content-->
-<div class="box speech-bubble"><h3><i>My Skills</i></h3></div>
-<div a href="#" class="center-page">
-    <div class="centered">
+    <div class="cd-timeline-content">
+      <h2>Coca Cola</h2>
+      <div class="timeline-content-info">
+        <span class="timeline-content-info-title">
+          <i class="fa fa-certificate" aria-hidden="true"></i>
+          Product Merchandiser
+        </span>
+        <span class="timeline-content-info-date">
+          <i class="fa fa-calendar-o" aria-hidden="true"></i>
+          November 2015 - May 2015
+        </span>
+      </div>
+      <p>Tasked with the job of recieving and inventory of coca-cola products on shipment dates, maintianing
+        warehouse products and placing product on shelves at multiple locations.
+      </p>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
 
-        </div> 
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>future Title Here</h2>
+      <p>Furutre content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>Furuter title here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknwon date/span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>future title here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location">
     </div>
-</div>
 
-<div a href="#" class="hvr-float-shadow4"><p></p>this is another test</p></div>
-<div a href="#" class="pgbottom"</div>
-    
+    <div class="cd-timeline-content">
+      <h2>future content here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
 
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>Final Section</h2>
+      <p>This is the content of the last section</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+</section> <!-- cd-timeline -->
+  
 </body>
+
 </html>
