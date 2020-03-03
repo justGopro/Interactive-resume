@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Jorden's Interactive resume</title><
+  <title>Jorden's Interactive resume</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles.scss">
   <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script>
   var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
@@ -32,7 +32,7 @@
     this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
     var that = this;
-    var delta = 300 - Math.random() * 100;
+    var delta = 300 - Math.random() *250;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -70,45 +70,67 @@
 </head>
 
 <body>
-
+<div class="image-container">
+  <div class="text">Front-End Dev</div>
+</div>
+<!--  
   <center>
-    <h3><i>
-      <span>I</span>
-      <span>n</span>
-      <span>t</span>
-      <span>e</span>
-      <span>r</span>
-      <span>a</span>
-      <span>c</span>
-      <span>t</span>
-      <span>i</span>
-      <span>v</span>
-      <span>e</span> resume
+    <h3><i> 
+      <span class="pro">I</span>
+      <span class="pro">n</span>
+      <span class="pro">t</span>
+      <span class="pro">e</span>
+      <span class="pro">r</span>
+      <span class="pro">a</span>
+      <span class="pro">c</span>
+      <span class="pro">t</span>
+      <span class="pro">i</span>
+      <span class="pro">v</span>
+      <span class="pro">e</span> resume
     </h3></i>
-  </center>
+  </center> -->
 
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+  </div>
+</div>
+
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Click here for more</span>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+</script>
 <div class="card">
   <img src="resume picture.jpg" alt="Jorden" style="width:100%">
   <h2>Jorden Landry</h2>
   <p class="title">AFO/IEFS Wire Technician</p>
   <p>Atlas Ambassador</p>
-  <p>Be a
-<span class="txt-rotate" data-period="2000" data-rotate='[ "Leader.", "example for others.", "Enthusiatic Person." ]'></span></p>
+  <p>Be a person who
+<span class="txt-rotate" data-period="2000" data-rotate='[ "leads others.", "thrives for success", "encourage others." ]'></span></p>
   <div style="margin: 24px 0;">
-
   </div>
 
-  <p><button>Contact</button></p>
+<div></div>
+  <button>Contact</button>
 </div>
 
-
-<section id="cd-timeline" class="cd-container">
+<section id="cd-timeline"  class="cd-container" >
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
+    <div class="cd-timeline-img cd-picture" >
     </div>
 
-    <div class="cd-timeline-content">
-      <h2>Coca Cola</h2>
+    <div id="hvr-float" class="cd-timeline-content" >
+      <h2 class="pro">Coca Cola</h2>
       <div class="timeline-content-info">
         <span class="timeline-content-info-title">
           <i class="fa fa-certificate" aria-hidden="true"></i>
@@ -129,8 +151,8 @@
     <div class="cd-timeline-img cd-movie">
     </div> <!-- cd-timeline-img -->
 
-    <div class="cd-timeline-content">
-      <h2>future Title Here</h2>
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future Title Here</h2>
       <p>Furutre content here</p>
       <span class="cd-date">unknown date</span>
     </div> <!-- cd-timeline-content -->
@@ -140,8 +162,8 @@
     <div class="cd-timeline-img cd-picture">
     </div> <!-- cd-timeline-img -->
 
-    <div class="cd-timeline-content">
-      <h2>Furuter title here</h2>
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">Furuter title here</h2>
       <p>Future content here</p>
       <span class="cd-date">unknwon date/span>
     </div> <!-- cd-timeline-content -->
@@ -151,8 +173,8 @@
     <div class="cd-timeline-img cd-location">
     </div> <!-- cd-timeline-img -->
 
-    <div class="cd-timeline-content">
-      <h2>future title here</h2>
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future title here</h2>
       <p>Future content here</p>
       <span class="cd-date">unknown date</span>
     </div> <!-- cd-timeline-content -->
@@ -162,8 +184,8 @@
     <div class="cd-timeline-img cd-location">
     </div>
 
-    <div class="cd-timeline-content">
-      <h2>future content here</h2>
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future content here</h2>
       <p>Future content here</p>
       <span class="cd-date">unknown date</span>
     </div> <!-- cd-timeline-content -->
@@ -173,13 +195,15 @@
     <div class="cd-timeline-img cd-movie">
     </div> <!-- cd-timeline-img -->
 
-    <div class="cd-timeline-content">
-      <h2>Final Section</h2>
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">Final Section</h2>
       <p>This is the content of the last section</p>
       <span class="cd-date">unknown date</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 </section> <!-- cd-timeline -->
+
+<!-- mouse hover over boxes on timeline-->
   
 </body>
 
