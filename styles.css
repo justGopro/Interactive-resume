@@ -423,7 +423,7 @@ h3 span{
     display: table-cell;
     margin: 0;
     padding: 0;
-    animation: animate 2s linear infinite;
+    animation: animate 3s linear infinite;
 }
 h3 span:nth-child(1)
 {
@@ -445,6 +445,34 @@ h3 span:nth-child(5)
 {
     animation-delay: 1s;
 }
+h3 span:nth-child(6)
+{
+    animation-delay: 1.25s;
+}
+
+h3 span:nth-child(7)
+{
+    animation-delay: 1.5s;
+}
+h3 span:nth-child(8)
+{
+    animation-delay: 1.75s;
+}
+
+h3 span:nth-child(9)
+{
+    animation-delay: 2s;
+}
+
+h3 span:nth-child(10)
+{
+    animation-delay: 2.25s;
+}
+
+h3 span:nth-child(11)
+{
+    animation-delay: 2.5s;
+}
 
 @keyframes animate
 {
@@ -458,6 +486,7 @@ h3 span:nth-child(5)
                      0 0 80px #00e3ff,
                      0 0 120px #00e3ff;
     }
+
     5%,95%
     {
         color: #111;
