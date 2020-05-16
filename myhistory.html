@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Jorden's Interactive resume</title>
+  <!-- -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/styles.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      <script src="https://kit.fontawesome.com/01ec376558.js" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="styles.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <div class="cover-container d-flex w-40 h-40 p-4 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="cover.html">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="index.html">My History</a>
+          </nav>
+        </div>
+      </header>
+
+        </div>
+  <script>
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+    var that = this;
+    var delta = 300 - Math.random() *250;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("styles");
+    css.type = "styles.css";
+    document.body.appendChild(css);
+  };
+  
+
+  </script>
+</head>
+
+<body>
+
+
+  
+</script>
+<div class="card">
+  <img src="resume picture.jpg" alt="Jorden" style="width:100%">
+  <h2>Jorden Landry</h2>
+  <p class="title">AFO/IEFS Wire Technician</p>
+  <p>Atlas Ambassador</p>
+  <p>Be a person who
+<span class="txt-rotate" data-period="2000" data-rotate='[ "leads others.", "thrives for success", "encourage others." ]'></span></p>
+  <div style="margin: 24px 0;">
+  </div>
+
+  <button type="button" class="button1" data-toggle="modal" data-target="#exampleModal"> 
+   <span> <i class="fas fa-map-marked-alt"></i> Contact Information </button></span>
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><bold>Listed below is my contact info:</bold></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Address: 104 hayden reece st, Gray Louisiana 70359
+          <br>
+          Email: Landry1023@hotmail.com
+          <br>
+          Contact Number: (985)381-7167
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="cd-timeline"  class="cd-container" >
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture" ></div>
+    </div>
+
+
+    <div id="hvr-float" class="cd-timeline-content" >
+      <h2 class="pro">Coca Cola</h2>
+      <div class="timeline-content-info">
+        <span class="timeline-content-info-title">
+          <i class="fa fa-certificate" aria-hidden="true"></i>
+          Product Merchandiser
+        </span>
+        <span class="timeline-content-info-date">
+          <i class="fa fa-calendar-o" aria-hidden="true"></i>
+          November 2014 - May 2015
+        </span>
+      </div>
+      <p>Tasked with the job of recieving and inventory of coca-cola products on shipment dates, maintianing
+        warehouse products and placing product on shelves at multiple locations.
+      </p>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie">
+    </div> <!-- cd-timeline-img -->
+
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future Title Here</h2>
+      <p>Furutre content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
+    </div> <!-- cd-timeline-img -->
+
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">Furuter title here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknwon date/span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location">
+    </div> <!-- cd-timeline-img -->
+
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future title here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location">
+    </div>
+
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">future content here</h2>
+      <p>Future content here</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie">
+    </div> <!-- cd-timeline-img -->
+
+    <div id="hvr-float" class="cd-timeline-content">
+      <h2 class="pro">Final Section</h2>
+      <p>This is the content of the last section</p>
+      <span class="cd-date">unknown date</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+</section> <!-- cd-timeline -->
+  <!-- end of page Icons -->
+
+<!-- mouse hover over boxes on timeline-->
+
+  <!-- end of page Icons -->
+  <!-- script to open facebook in a new page-->
+  <script>
+    function myFunction() {
+      window.open("https://www.facebook.com/jorden.landry");
+    }
+  </script>
+
+  <div class="Button-Icons">
+            <a button onclick="myFunction()" href="#" class="fa fa-facebook"  style="font-size: 1.95em;"></a>
+            </div>
+
+              <footer class="mastfoot mt-auto">
+                <div class="inner">
+                  <p>Created and Developed by hand</a>.</p>
+                </div>
+              </footer>
+
+</body>
+
+</html>
